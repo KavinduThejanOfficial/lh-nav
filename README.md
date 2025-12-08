@@ -194,22 +194,21 @@ npm run dev
 ### 项目结构
 
 mao_nav/
-├── src/
-│   ├── apis/           # GitHub API 交互逻辑
-│   ├── assets/         # 静态资源
-│   ├── components/     # Vue 组件 (SiteManager, CategoryManager...)
-│   ├── mock/           # mock_data.js (本地数据/数据存储文件)
-│   ├── router/         # 路由配置
-│   ├── stores/         # Pinia 状态管理
-│   ├── views/          # 页面视图 (NavHomeView, AdminView)
-│   ├── App.vue         # 根组件
-│   └── main.js         # 入口文件
-└── index.html          # HTML 模板
-├── public/            # 公共静态文件
-├── index.html         # HTML 模板
-├── package.json       # 项目配置
-├── vite.config.js     # Vite 配置
-└── wrangler.toml      # Cloudflare 部署配置
+├── public/ # 公共静态文件 (favicon, logo等)
+├── src/ # 源代码目录
+│ ├── apis/ # GitHub API 交互逻辑
+│ ├── assets/ # 静态资源 (CSS, 图片)
+│ ├── components/ # Vue 组件 (SiteManager, CategoryManager...)
+│ ├── mock/ # mock_data.js (本地数据/数据存储文件)
+│ ├── router/ # 路由配置
+│ ├── stores/ # Pinia 状态管理
+│ ├── views/ # 页面视图 (NavHomeView, AdminView)
+│ ├── App.vue # 根组件
+│ └── main.js # 入口文件
+├── index.html # HTML 模板入口
+├── package.json # 项目依赖配置
+├── vite.config.js # Vite 构建配置
+└── wrangler.toml # Cloudflare 部署配置
 
 
 
