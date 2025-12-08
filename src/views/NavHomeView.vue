@@ -207,7 +207,7 @@
 
             <div class="footer-bottom">
               <p>&copy; {{ new Date().getFullYear() }} {{ siteConfig.siteName }} - 由 <a :href="`https://github.com/${siteConfig.githubAuthor}`"
-              <p class="footer-tech">基于 Vue.js 构建 | <a :href="siteConfig.githubUrl"
+              <p class="footer-tech">基于 Vue.js 构建 | <a href="https://github.com/maodeyu180/mao_nav"
             </div>
           </footer>
         </div>
