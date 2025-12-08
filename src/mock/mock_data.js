@@ -7,6 +7,34 @@ export const mockData = {
       "order": 0,
       "sites": [
         {
+          "id": "site-1765172621672",
+          "name": "烈火项目直达",
+          "url": "https://github.com/xtgm/stallTCP1.3V1",
+          "description": "烈火项目直达",
+          "icon": "https://www.faviconextractor.com/favicon/github.com"
+        },
+        {
+          "id": "site-1765172701116",
+          "name": "烈火反代检测",
+          "url": "https://github.com/xtgm/snippet-FD-GY",
+          "description": "proxyip反代检测",
+          "icon": "https://www.faviconextractor.com/favicon/github.com"
+        },
+        {
+          "id": "site-1765172736134",
+          "name": "天诚交流群",
+          "url": "https://t.me/zyssadmin",
+          "description": "天诚交流群直达",
+          "icon": "https://www.faviconextractor.com/favicon/t.me"
+        },
+        {
+          "id": "site-1765172766263",
+          "name": "天诚频道",
+          "url": "https://t.me/cloudflareorg",
+          "description": "天诚频道直达",
+          "icon": "https://www.faviconextractor.com/favicon/t.me"
+        },
+        {
           "id": "site-1752649007053",
           "name": "BeJson",
           "url": "https://www.bejson.com/",
@@ -481,7 +509,5 @@ export const mockData = {
       ]
     }
   ],
-  "title": "猫猫导航🐱",
-  "_fileSha": "ea3f00cba99e7d9e1d5cb7b816f6a7836b8c233e",
-  "search": "google"
+  "title": "猫猫导航🐱"
 }
