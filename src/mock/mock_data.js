@@ -509,7 +509,7 @@ export const mockData = {
       ]
     }
   ],
-  "title": "烈火🔥",
-  "_fileSha": "47fc65653bd8d8fae158bdb6e53f5780c279562f",
+  "title": "",
+  "_fileSha": "",
   "search": "google"
 }
