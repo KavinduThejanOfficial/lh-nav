@@ -32,6 +32,7 @@
     <aside class="sidebar">
       <!-- Logo区域 -->
       <div class="logo-section">
+        <!-- 动态绑定 src，加上时间戳防缓存 -->
         <img :src="logoUrl" alt="logo" class="logo" @error="handleLogoError" />
         <h1 class="site-title">{{ displayTitle }}</h1>
       </div>
