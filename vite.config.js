@@ -4,25 +4,22 @@ import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
 
 export default defineConfig(({ mode }) => {
-  // 加载环境变量
+  // 1. 加载环境变量
   const env = loadEnv(mode, process.cwd(), '')
   
-  // 获取标题配置，优先使用 VITE_SITE_TITLE，如果没有则用 VITE_SITE_NAME，最后兜底
-  const appTitle = env.VITE_SITE_TITLE || env.VITE_SITE_NAME || '猫猫导航'
+  // 2. 确定最终标题：优先用 VITE_SITE_TITLE，没有则用 VITE_SITE_NAME，再没有就用默认值
+  const finalTitle = env.VITE_SITE_TITLE || env.VITE_SITE_NAME || '猫猫导航'
 
   return {
     plugins: [
       vue(),
       vueDevTools(),
-      // 核心修复插件：构建时直接替换 HTML 标题
+      // 3. 核心插件：在构建时处理 HTML
       {
-        name: 'html-title-transform',
+        name: 'html-transform',
         transformIndexHtml(html) {
-          // 查找 <title> 标签并替换内容
-          return html.replace(
-            /<title>(.*?)<\/title>/,
-            `<title>${appTitle}</title>`
-          )
+          // 只要发现 %SITE_TITLE% 这个字符串，就替换成 finalTitle
+          return html.replace(/%SITE_TITLE%/g, finalTitle)
         }
       }
     ],
