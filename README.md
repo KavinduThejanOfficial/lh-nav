@@ -67,6 +67,7 @@
 
 - **如果你使用 _Vercel_ 或 _Cloudflare Pages_ 部署：**  
   **请在对应平台的「环境变量」设置界面，添加下方这些变量，无需在项目中创建 `.env` 文件。**
+  **(注意：修改环境变量后，必须重新触发部署 (Redeploy) 才会生效)**
 
 
 
@@ -77,9 +78,11 @@
 | `VITE_GITHUB_OWNER` | ⚪ | 你的 GitHub 用户名。如果不填，尝试自动获取。 | `yourname` |
 | `VITE_GITHUB_REPO` | ⚪ | 你的仓库名称。 | `mao_nav` |
 | `VITE_GITHUB_BRANCH` | ⚪ | 数据存储分支。 | `master` 或 `main` |
-| `VITE_SITE_TITLE` | ⚪ | **网站标题**。自定义浏览器标签页和首页显示的名称。 | `我的专属导航` |
-| `VITE_ADMIN_TITLE` | ⚪ | **后台标题**。自定义后台管理界面的标题。 | `控制台` |
+| `VITE_SITE_TITLE` | ⚪ | **网站标题**。浏览器标签页和首页大标题 (最高优先级，覆盖默认值)。 | `烈火导航` |
+| `VITE_ADMIN_TITLE` | ⚪ | **后台标题**。自定义后台管理界面的标题。 | `管理后台-烈火` |
+| `VITE_SITE_DESCRIPTION` | ⚪ | **网站描述**。用于 SEO 搜索引擎抓取和分享时的介绍文字。 | `一个简洁、美观的导航网站` |
 | `VITE_OPEN_LOCK` | ⚪ | **前台锁定**。设为 `true` 时，访问首页也需要输入密码。 | `false` |
+
 
 
 
