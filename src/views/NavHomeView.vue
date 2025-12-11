@@ -232,40 +232,43 @@ const unlockError = ref('')
 const projectUrl = 'https://github.com/maodeyu180/mao_nav'
 
 // ==========================================
-// 核心修复区域：标题逻辑
+// 核心修复：绝对优先级标题逻辑
 // ==========================================
 
-// 读取环境变量
+// 1. 读取环境变量
 const envSiteTitle = import.meta.env.VITE_SITE_TITLE
 const envDescription = import.meta.env.VITE_SITE_DESCRIPTION || '一个简洁、美观的导航网站'
 
-// 强力计算属性：无论 API 返回什么，只要有环境变量，就用环境变量
+// 2. 强力计算属性：如果环境变量存在，无视其他一切
 const displayTitle = computed(() => {
   if (envSiteTitle && envSiteTitle.trim() !== '') {
     return envSiteTitle
   }
-  // 如果 API 里的 title 是 "猫猫导航" (旧数据)，我们也无视它，显示默认值
-  if (title.value === '猫猫导航') {
-    return '我的导航'
-  }
+  // 如果没有环境变量，才使用 API 返回的 title
   return title.value || '我的导航'
 })
 
 const logoUrl = ref('/logo.png')
 
-// 监听 displayTitle 变化，同步设置 document.title
-// 这里的逻辑增加了保护，防止被设置成空或 undefined
+// 3. 核心修复：防止标题被置空
 watch(displayTitle, (newTitle) => {
+  // 如果环境变量存在，且当前 document.title 不是环境变量的值，强制纠正
+  if (envSiteTitle && envSiteTitle.trim() !== '') {
+    if (document.title !== envSiteTitle) {
+      document.title = envSiteTitle
+    }
+    return // 直接返回，不执行后面的逻辑
+  }
+
+  // 只有在没有环境变量的情况下，才允许使用 API 的值
+  // 并且严格防止设置为空字符串，防止出现域名乱码
   if (newTitle && newTitle.trim() !== '') {
     document.title = newTitle
-  } else if (envSiteTitle) {
-    // 如果计算出的标题为空，但环境变量有值，强制用环境变量
-    document.title = envSiteTitle
   }
 }, { immediate: true })
 
 // ==========================================
-// 结束核心修复区域
+// 结束核心修复
 // ==========================================
 
 const searchEngines = {
@@ -391,8 +394,8 @@ const openGitHub = () => {
 }
 
 onMounted(async () => {
-  // 页面挂载时，再次强制设置标题，确保覆盖任何中间状态
-  if (envSiteTitle) {
+  // 4. 页面挂载时，最后一道防线
+  if (envSiteTitle && envSiteTitle.trim() !== '') {
     document.title = envSiteTitle
   }
   
@@ -408,7 +411,7 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-/* 样式保持不变 */
+/* 样式保持不变，此处省略 */
 .lock-container {
   position: fixed;
   top: 0;
