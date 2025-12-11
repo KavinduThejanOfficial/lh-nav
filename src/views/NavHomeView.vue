@@ -238,12 +238,31 @@ const envSiteTitle = import.meta.env.VITE_SITE_TITLE
 const envDescription = import.meta.env.VITE_SITE_DESCRIPTION || '一个简洁、美观的导航网站'
 
 const displayTitle = computed(() => {
-  // 只要环境变量存在，无视任何其他来源（包括 API 返回的 title）
+  // 1. 最高优先级：环境变量
   if (envSiteTitle && envSiteTitle.trim() !== '') {
     return envSiteTitle
   }
-  // 只有环境变量为空时，才尝试使用 API 返回的 title
+  
+  // 2. 过滤掉旧的关键词
+  if (title.value === '猫猫导航') {
+    return '我的导航'
+  }
+  
+  // 3. 使用 API 返回的值或默认值
   return title.value || '我的导航'
+})
+
+// 在 onMounted 中也加强制设置
+onMounted(async () => {
+  // 强制立即设置一次，覆盖浏览器可能缓存的标题
+  if (envSiteTitle) {
+    document.title = envSiteTitle
+  }
+  
+  checkLockStatus()
+  logoUrl.value = `/logo.png?t=${new Date().getTime()}`
+  selectedEngine.value = defaultSearchEngine.value
+  await fetchCategories()
 })
 
 const logoUrl = ref('/logo.png')
