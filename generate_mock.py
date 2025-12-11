@@ -420,7 +420,9 @@ class ChromeBookmarkParser:
         """生成mock_data.js文件内容"""
         mock_data = {
             'categories': self.categories,
-            'title': '猫猫导航'
+            # 修改前: 'title': '猫猫导航'
+            # 修改后: 改为通用名称，或者完全移除该字段让前端环境变量接管
+            'title': '我的导航' 
         }
         
         # 生成JavaScript格式的内容
